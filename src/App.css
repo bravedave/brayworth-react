@@ -1,33 +1,51 @@
-.App {
-  text-align: center;
-}
+html, body, div#root, .App { height: 100%; }
+/*
+body { font-family: "Bahnschrift Light", "Helvetica Neue", Arial, sans-serif }
+.navbar-brand, .navbar-nav>li>a { line-height: 40px; }
+*/
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+#parallax {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#parallax img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%;
 }
-
-.App-link {
-  color: #61dafb;
+@media ( max-width: 1024px) and (orientation:portrait) {
+	#parallax img {
+		height: 50%;
+	}
 }
+@media ( max-width: 1024px) and (orientation:landscape) {
+	#parallax img {
+		width: 50%;
+	}
+}
+.parallax { height: 100%; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pointer { cursor: pointer; }
+
+.about-button-a { background-color: rgb(252, 25, 31); }
+.about-button-b { background-color: #e8a32b; }
+.about-button-c { background-color: #68a4d6; }
+.about-button-d { background-color: #777; }
+.about-button-e { background-color: #3a486b; }
+
+pre {
+	padding: .2rem .4rem;
+	font-size: 90%;
+	color: #bd4147;
+	background-color: #f8f9fa;
+	border-radius: .25rem;
 }
