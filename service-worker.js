@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/brayworth-react/precache-manifest.974498d783c530a40273a0ce07ad3757.js"
+  "/brayworth-react/precache-manifest.c713c674fb1e8f1b89134f3738257145.js"
 );
 
 workbox.clientsClaim();
