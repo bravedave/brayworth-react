@@ -32,7 +32,7 @@ class App extends Component {
         // Callback
         // console.log('All Scripts Loaded');
         window.grecaptcha.ready(function () {
-          window.grecaptcha.execute( key, { action: 'homepage' }).then(function (token) {
+          window.grecaptcha.execute(key, { action: 'homepage' }).then(function (token) {
             let options = {
               url: '/',
               type: 'POST',
@@ -64,6 +64,16 @@ class App extends Component {
         });
 
       });
+
+    ;
+    
+    setTimeout( () => {
+      if ( window.pageYOffset > 0) {
+        window.scrollTo(0, 0);
+
+      }
+    
+    }, 1000);
 
   }
 

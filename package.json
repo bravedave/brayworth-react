@@ -13,6 +13,7 @@
     "react-scripts": "2.1.5",
     "typescript": "^3.3.3333"
   },
+  "proxy":"https://brayworth.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
