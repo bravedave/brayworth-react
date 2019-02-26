@@ -4,6 +4,20 @@ import PropTypes from 'prop-types'; // ES6
 
 class Nav extends Component {
   render() {
+    let contact = '';
+
+    if ('yes' === this.props.verified) {
+      contact = <li className="nav-item">
+        <div className="nav-link pointer" onClick={() => {
+          let el = this.props.contactRef.current;
+          el.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+
+        }}>contact</div>
+
+      </li>
+
+    }
+
     return (
       <Navbar>
         <Navbrand name="Brayworth Web Design" />
@@ -19,20 +33,13 @@ class Nav extends Component {
           <li className="nav-item">
             <div className="nav-link pointer" onClick={() => {
               let el = this.props.aboutRef.current;
-              el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+              el.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 
             }}>about</div>
 
           </li>
 
-          {/* <li className="nav-item">
-            <div className="nav-link pointer" onClick={() => {
-              let el = this.props.contactRef.current;
-              el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-
-            }}>contact</div>
-
-          </li> */}
+          {contact}
 
         </NavbarCollapse>
 
@@ -46,7 +53,7 @@ class Nav extends Component {
 
 Nav.propTypes = {
   aboutRef: PropTypes.object.isRequired,
-  contactRef : PropTypes.object.isRequired
+  contactRef: PropTypes.object.isRequired
 
 };
 
