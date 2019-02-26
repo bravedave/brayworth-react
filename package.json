@@ -5,20 +5,18 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "gh-pages": "^2.0.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "typescript": "^3.3.3333"
   },
-  "proxy": "https://brayworth.com/",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "postbuild.cmd",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

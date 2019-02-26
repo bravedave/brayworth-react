@@ -15,6 +15,7 @@ class Contact extends Component {
         };
 
         this.buttonRef = React.createRef();
+        this.formRef = React.createRef();
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,17 +38,16 @@ class Contact extends Component {
         // alert('A name was submitted: ' + this.state.contactName);
         event.preventDefault();
 
-        // console.log(this.state);
+        // console.log(this);
+        // return ( false);
 
         let state = this.state;
         let options = {
             url: '/',
             type: 'POST',
             data: {
-                action: 'Submit',
+                action: 'send-message',
                 soz: state.soz,
-                riddle : '7',
-                mathCheck : '7',
                 contactName: state.contactName,
                 email: state.email,
                 comments: state.comments,
@@ -58,16 +58,16 @@ class Contact extends Component {
         };
 
         let btn = jQuery(this.buttonRef.current);
+        
+        jQuery( 'input, textarea', this.formRef.current).prop('disabled', true);
+
 
         // console.log(options);
         jQuery.ajax(options).then(function (d) {
             // console.log(d);
             if ('ack' === d.response) {
-                if (d.data.success) {
-                    btn.parent().append('<span>sent ..</span>');
-                    btn.remove();
-
-                }
+                btn.parent().append('<span>sent ..</span>');
+                btn.remove();
 
             }
 
@@ -92,7 +92,7 @@ class Contact extends Component {
 
                 </div>
 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} ref={this.formRef}>
                     <div className="form-group row">
                         <label className="control-label col-sm-3"
                             htmlFor="contactName">Name</label>

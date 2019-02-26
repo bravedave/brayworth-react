@@ -6,6 +6,7 @@ import { Contact } from './Contact';
 import { About } from './About';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
+import Loader from './loader';
 import jQuery from 'jquery';
 
 class App extends Component {
@@ -21,37 +22,48 @@ class App extends Component {
 
   componentDidMount() {
     let _me = this;
-    window.grecaptcha.ready(function () {
-      window.grecaptcha.execute('6Le2OXgUAAAAAJlZnzozDmuZeI2B-mbmJKqABvq3', { action: 'homepage' }).then(function (token) {
-        let options = {
-          url: '/',
-          type: 'POST',
-          data: {
-            action: 'verify-captcha',
-            token: token
+    let key = '6Le2OXgUAAAAAJlZnzozDmuZeI2B-mbmJKqABvq3';
 
-          },
+    var l = new Loader();
+    l.require([
+      "https://www.google.com/recaptcha/api.js?render=" + key
+    ],
+      function () {
+        // Callback
+        // console.log('All Scripts Loaded');
+        window.grecaptcha.ready(function () {
+          window.grecaptcha.execute( key, { action: 'homepage' }).then(function (token) {
+            let options = {
+              url: '/',
+              type: 'POST',
+              data: {
+                action: 'verify-captcha',
+                token: token
 
-        };
+              },
 
-        jQuery.ajax(options).then(function (d) {
-          if ('ack' === d.response) {
-            if (d.data.success) {
-              _me.soz = d.soz;
-              _me.catchaVerified = 'yes';
-              _me.forceUpdate();
-              
-              // console.log(d);
+            };
 
-            }
+            jQuery.ajax(options).then(function (d) {
+              if ('ack' === d.response) {
+                if (d.data.success) {
+                  _me.soz = d.soz;
+                  _me.catchaVerified = 'yes';
+                  _me.forceUpdate();
 
-          }
+                  // console.log(d);
+
+                }
+
+              }
+
+            });
+
+          });
 
         });
 
       });
-
-    });
 
   }
 
