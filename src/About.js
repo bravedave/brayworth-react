@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import iPhone from './images/iphone-profile.jpg';
+import Scrolltop from './Scrolltop';
 
 class About extends Component {
     render() {
@@ -11,8 +12,10 @@ class About extends Component {
               <span className="d-none d-sm-inline-block px-2"> - </span>
               <small className="subtitle">Full Stack</small></h1>
   
+            <Scrolltop />
+
             <div className="row">
-              <div className="col-8 col-sm-6">
+              <div className="col-8 col-md-6">
                 <p>BrayWorth is a Full Stack Web Development Company.</p>
   
                 <p>Full Stack Web Development works with back end server-side languages
@@ -31,41 +34,41 @@ class About extends Component {
   
               </div>
   
-              <div className="col-4 col-sm-3">
+              <div className="d-none d-md-block col-md-3">
                 <img className="img img-responsive img-thumbnail" alt="..." src={iPhone} />
   
               </div>
   
-              <div className="col-12 col-sm-6 col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="alert about-button-a text-center text-white">
                   HTML/CSS
   
-                      </div>
+                </div>
   
                 <div className="alert about-button-b text-center text-white">
                   Bootstrap
   
-                      </div>
+                </div>
   
                 <div className="alert about-button-c text-center text-white">
                   JavaScript
   
-                      </div>
+                </div>
   
                 <div className="alert about-button-d text-center text-white">
                   PHP
   
-                      </div>
+                </div>
   
                 <div className="alert about-button-e text-center text-white">
                   REST
   
-                      </div>
+                </div>
   
                 <div className="alert about-button-a text-center text-white">
                   DataBase
   
-                      </div>
+                </div>
   
               </div>
   
@@ -95,28 +98,28 @@ class About extends Component {
             </div>
   
             <div className="row py-1">
-              <div className="col-sm-6 col-md-3 offset-xl-2 col-xl-2 text-center">
+              <div className="col-sm-6 col-md-3 col-xl-2 offset-xl-2">
                 <a className="btn btn-block btn-outline-secondary"
                   href="https://www.darcy.com.au" target="_blank"
                   rel="noopener noreferrer">D&apos;Arcy Estate Agents</a>
   
               </div>
   
-              <div className="col-sm-6 col-md-3 col-xl-2 text-center">
+              <div className="col-sm-6 col-md-3 col-xl-2 mt-2 mt-sm-0">
                 <a className="btn btn-block btn-outline-secondary"
                   href="https://www.maricourt.com.au"
                   target="_blank" rel="noopener noreferrer">Mari Court</a>
   
               </div>
   
-              <div className="col-sm-6 col-md-3 col-xl-2 text-center">
+              <div className="col-sm-6 col-md-3 col-xl-2 mt-2 mt-md-0">
                 <a className="btn btn-block btn-outline-secondary"
                   href="https://friendsofcurrumbin.com/"
                   target="_blank" rel="noopener noreferrer">FOC</a>
   
               </div>
   
-              <div className="col-sm-6 col-md-3 col-xl-2 text-center">
+              <div className="col-sm-6 col-md-3 col-xl-2 mt-2 mt-md-0">
                 <a className="btn btn-block btn-outline-secondary"
                   href="https://www.bilingaslsc.com"
                   target="_blank" rel="noopener noreferrer">Bilinga SLSC</a>

@@ -22,6 +22,20 @@ class App extends Component {
 
   componentDidMount() {
     let _me = this;
+    // setTimeout( () => {
+    //   if ( window.pageYOffset > 0) {
+    // jQuery('html, body').animate({ scrollTop: 130 }, 2000);
+    // console.log('adjust ..');
+
+    window.scrollTo({
+      left: 0,
+      top: 130,
+      behavior: 'smooth'
+    });
+    //   }
+
+    // }, 3000);
+
     let key = '6Le2OXgUAAAAAJlZnzozDmuZeI2B-mbmJKqABvq3';
 
     var l = new Loader();
@@ -66,14 +80,10 @@ class App extends Component {
       });
 
     ;
-    
-    setTimeout( () => {
-      if ( window.pageYOffset > 0) {
-        window.scrollTo(0, 0);
 
-      }
-    
-    }, 1000);
+    // jQuery(document).ready( function() {
+
+    // });
 
   }
 

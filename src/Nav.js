@@ -53,7 +53,8 @@ class Nav extends Component {
 
 Nav.propTypes = {
   aboutRef: PropTypes.object.isRequired,
-  contactRef: PropTypes.object.isRequired
+  contactRef: PropTypes.object.isRequired,
+  verified : PropTypes.string,
 
 };
 

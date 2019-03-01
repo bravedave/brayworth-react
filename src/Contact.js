@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // ES6
 import jQuery from 'jquery';
+import Scrolltop from './Scrolltop';
 
 class Contact extends Component {
     constructor(props) {
@@ -58,8 +59,8 @@ class Contact extends Component {
         };
 
         let btn = jQuery(this.buttonRef.current);
-        
-        jQuery( 'input, textarea', this.formRef.current).prop('disabled', true);
+
+        jQuery('input, textarea', this.formRef.current).prop('disabled', true);
 
 
         // console.log(options);
@@ -80,9 +81,11 @@ class Contact extends Component {
     render() {
         return (
             <div>
+
                 <div className="row">
                     <div className="offset-sm-3 col-sm-9">
                         <h1>Contact</h1>
+                        <Scrolltop />
 
                         <strong>Gold Coast, Q. Australia</strong><br />
                         PO Box 292 Tugun, Q 4224<br />

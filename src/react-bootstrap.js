@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'; // ES6
 
 class Navbar extends Component {
     render() {
         return (
             <nav
-                className="navbar sticky-top navbar-dark bg-dark navbar-expand-md py-1"
+                className="navbar sticky-top navbar-dark bg-dark navbar-expand-sm py-1"
                 role="navigation">
                 {this.props.children}
             </nav>
@@ -14,6 +15,7 @@ class Navbar extends Component {
     }
 
 }
+
 
 class Navbrand extends Component {
     render() {
@@ -54,12 +56,33 @@ class NavbarCollapse extends Component {
                     {this.props.children}
 
                 </ul>
-                
+
             </div>
 
         )
 
     }
+
+}
+
+Navbar.propTypes = {
+    children : PropTypes.any
+
+}
+
+Navbrand.propTypes = {
+    name : PropTypes.string
+    
+}
+
+NavbarToggler.propTypes = {
+    target : PropTypes.any
+
+}
+
+NavbarCollapse.propTypes = {
+    id : PropTypes.string,
+    children : PropTypes.any
 
 }
 
