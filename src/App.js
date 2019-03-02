@@ -22,29 +22,17 @@ class App extends Component {
 
   componentDidMount() {
     let _me = this;
-    // setTimeout( () => {
-    //   if ( window.pageYOffset > 0) {
-    // jQuery('html, body').animate({ scrollTop: 130 }, 2000);
-    // console.log('adjust ..');
 
-    window.scrollTo({
-      left: 0,
-      top: 130,
-      behavior: 'smooth'
-    });
-    //   }
-
-    // }, 3000);
+    setTimeout(() => { window.scrollTo({ left: 0, top: 128, behavior: 'smooth' }); }, 100);
 
     let key = '6Le2OXgUAAAAAJlZnzozDmuZeI2B-mbmJKqABvq3';
 
     var l = new Loader();
-    l.require([
-      "https://www.google.com/recaptcha/api.js?render=" + key
-    ],
+    l.require(
+      [
+        "https://www.google.com/recaptcha/api.js?render=" + key
+      ],
       function () {
-        // Callback
-        // console.log('All Scripts Loaded');
         window.grecaptcha.ready(function () {
           window.grecaptcha.execute(key, { action: 'homepage' }).then(function (token) {
             let options = {
@@ -73,17 +61,15 @@ class App extends Component {
 
             });
 
+            jQuery('.grecaptcha-badge').fadeOut('slow');
+
           });
 
         });
 
-      });
+      }
 
-    ;
-
-    // jQuery(document).ready( function() {
-
-    // });
+    );
 
   }
 

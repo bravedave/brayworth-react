@@ -9,7 +9,10 @@ class Scrolltop extends Component {
                     e.preventDefault();
                     window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
 
-                    window.scrollTo({ left: 0, top: 130, behavior: 'smooth' });
+                    setTimeout(() => {
+                        window.scrollTo({ left: 0, top: 128, behavior: 'smooth' });
+
+                    }, 100);
 
                 }}
                 alt="up arrow" title="top of page" />
