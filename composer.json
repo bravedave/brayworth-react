@@ -1,0 +1,24 @@
+{
+    "name": "bravedave/site",
+    "description": "Brayworth WWW Site",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dave Bray",
+            "email": "david@brayworth.com.au"
+        }
+    ],
+    "require": {
+        "bravedave/dvc": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "site\\": "site/"
+
+        }
+
+    }
+
+}
