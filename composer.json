@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "bravedave/dvc": "^1.8"
+        "bravedave/dvc": "*"
     },
     "autoload": {
         "psr-4": {
