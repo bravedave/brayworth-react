@@ -12,8 +12,7 @@ namespace site;
 
 class application {
 	static function run() {
-		www::instance( realpath( __DIR__ . '/../build/'))
-			->serve( $_SERVER['REQUEST_URI']);
+		www::instance()->serve( $_SERVER['REQUEST_URI']);
 
 	}
 

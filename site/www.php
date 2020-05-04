@@ -19,8 +19,8 @@ class www {
 
     }
 
-    static function instance( string $manifest) : self {
-        return new self( $manifest);
+    static function instance() : self {
+        return new self( realpath( __DIR__ . '/../build/'));
 
     }
 
